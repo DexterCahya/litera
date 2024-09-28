@@ -1,8 +1,9 @@
-/* General styling */
 html {
-  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-behavior:smooth;
 }
+
 body {
+    overflow-x:hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -35,6 +36,7 @@ header {
 }
 
 .hamburger-icon {
+    margin-right:13px;
     width: 30px;
     height: 3px;
     background-color: #333;
@@ -88,12 +90,14 @@ nav a {
 
 /* Main Section */
 .main-section {
+    text-shadow:1px 1px 10px black;
     color: #ffffff;
     text-align: center;
     padding: 140px 20px;
     margin-top: 30px;
-    height: 100vh; /* Adjust height as needed */
-    background-size: cover;
+    width: 100vw;
+    height: 14vh; /* Adjust height as needed */
+    background-size: cover; /* Cover for desktop */
     background-position: center;
     background-repeat: no-repeat;
     animation: backgroundSlideshow 20s infinite;
@@ -101,18 +105,19 @@ nav a {
 
 @keyframes backgroundSlideshow {
     0% {
-        background-image: url('https://i.ibb.co/d5g0fjb/IMG-20240812-110209.jpg');
+        background-image: url('https://i.ibb.co.com/d5g0fjb/IMG-20240812-110209.jpg');
     }
     33% {
-        background-image: url('https://i.ibb.co/R2mNnQR/IMG-20240812-110432.jpg');
+        background-image: url('https://i.ibb.co.com/R2mNnQR/IMG-20240812-110432.jpg');
     }
     66% {
-        background-image: url('https://i.ibb.co/18vLPM6/IMG-20240812-133607.jpg');
+        background-image: url('https://i.ibb.co.com/18vLPM6/IMG-20240812-133607.jpg');
     }
     100% {
-        background-image: url('https://i.ibb.co/165zC8C/IMG-20240812-133553.jpg');
+        background-image: url('https://i.ibb.co.com/165zC8C/IMG-20240812-133553.jpg');
     }
 }
+
 
 .content-section {
     padding: 60px 20px;
@@ -129,6 +134,7 @@ p {
 }
 
 #about {
+    color:black;
     text-align: center;
 }
 
@@ -156,7 +162,7 @@ footer {
     color: grey;
 }
 
-/* Responsive Design for Mobile Devices */
+/* Responsive Design for Mobile Navigation */
 @media (max-width: 768px) {
     nav {
         display: none;
@@ -177,12 +183,5 @@ footer {
 
     .menu-toggle.active + nav {
         display: flex;
-    }
-
-    .main-section {
-        padding: 100px 10px; /* Adjust padding for mobile */
-        height: auto; /* Allow height to adjust */
-        animation: none; /* Disable animation on mobile for better performance */
-        background-size: contain; /* Use contain for better scaling */
     }
 }
