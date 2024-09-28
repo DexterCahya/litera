@@ -1,193 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Litera</title>
-    <style>
-        /* General styling */
-        html {
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8">
+  <title>CodePen - Untitled</title>
+  <link rel="stylesheet" href="./style.css">
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            margin-left: 10px;
-            height: 50px;
-        }
-
-        .menu-toggle {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            margin-right: 20px;
-            position: relative;
-            z-index: 1010;
-        }
-
-        .hamburger-icon {
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .hamburger-icon::before,
-        .hamburger-icon::after {
-            content: "";
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            position: absolute;
-            left: 0;
-        }
-
-        .hamburger-icon::before {
-            top: -10px;
-        }
-
-        .hamburger-icon::after {
-            top: 10px;
-        }
-
-        /* Toggle active class to transform hamburger icon into 'X' */
-        .menu-toggle.active .hamburger-icon {
-            transform: rotate(45deg);
-        }
-
-        .menu-toggle.active .hamburger-icon::before {
-            transform: rotate(90deg);
-            top: 0;
-        }
-
-        .menu-toggle.active .hamburger-icon::after {
-            display: none;
-        }
-
-        /* Navigation Styling */
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        /* Main Section with background slideshow */
-        .main-section {
-            color: #ffffff;
-            text-align: center;
-            padding: 140px 20px;
-            margin-top: 30px;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            animation: backgroundSlideshow 20s infinite;
-        }
-
-        @keyframes backgroundSlideshow {
-            0% {
-                background-image: url('path/to/image1.jpg');
-            }
-            33% {
-                background-image: url('path/to/image2.jpg');
-            }
-            66% {
-                background-image: url('path/to/image3.jpg');
-            }
-            100% {
-                background-image: url('path/to/image1.jpg');
-            }
-        }
-
-        .content-section {
-            padding: 60px 20px;
-        }
-
-        #download {
-            text-align: right;
-            color: white;
-            background-color: black;
-        }
-
-        #about {
-            text-align: center;
-        }
-
-        /* Button Styling */
-        .download-button {
-            background-color: #ffffff;
-            color: #000000;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: 1s;
-        }
-
-        .download-button:hover {
-            color: #ffffff;
-            background-color: #000000;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: black;
-            color: grey;
-        }
-
-        /* Responsive Design for Mobile Devices */
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-                background-color: white;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                z-index: 1000;
-            }
-
-            nav a {
-                margin: 10px 20px;
-                width: 100%;
-            }
-
-            .menu-toggle.active + nav {
-                display: flex;
-            }
-        }
-    </style>
 </head>
 <body>
+<!-- partial:index.partial.html -->
+<body>
     <header>
-        <img src="path/to/logo.png" alt="Logo" class="logo">
+        <img src="https://i.ibb.co/yPJhdGh/Litera-1.png" alt="Logo" class="logo">
         <button class="menu-toggle">
             <div class="hamburger-icon"></div>
         </button>
@@ -205,7 +28,7 @@
 
     <section class="content-section" id="introduction">
         <h2>Apa Itu Litera?</h2>
-        <p>Litera adalah aplikasi media pembelajaran berbasis Augmented Reality (AR) yang terintegrasi 3 in 1 guna meningkatkan nilai pembelajaran, keaktifan dan angka literasi peserta didik.</p>
+        <p>Litera adalah aplikasi media pembelajaran berbasis Augmented Reality(AR) yang terintegrasi 3 in 1 guna meningkatkan nilai pembelajaran, keaktifan dan angka literasi peserta didik</p>
     </section>
 
     <section class="content-section" id="download">
@@ -221,26 +44,9 @@
     <footer>
         <p>&copy; 2024 Litera. All rights reserved.</p>
     </footer>
+</body>
+<!-- partial -->
+  <script  src="./script.js"></script>
 
-    <script>
-        // Select the menu toggle button and navigation
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        const navLinks = document.querySelectorAll('nav a');
-
-        // Toggle navigation menu when hamburger icon is clicked
-        menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            menuToggle.classList.toggle('active'); // Toggle the active state for the button
-        });
-
-        // Close the menu when a nav link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                nav.classList.remove('active'); // Close the menu
-                menuToggle.classList.remove('active'); // Toggle the hamburger icon back
-            });
-        });
-    </script>
 </body>
 </html>
