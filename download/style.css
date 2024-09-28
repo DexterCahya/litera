@@ -1,0 +1,187 @@
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+    overflow-x:hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    margin-left: 10px;
+    height: 50px; /* Adjust logo size */
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    position: relative;
+    z-index: 1010;
+}
+
+.hamburger-icon {
+    margin-right:13px;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+}
+
+.hamburger-icon::before {
+    top: -10px;
+}
+
+.hamburger-icon::after {
+    top: 10px;
+}
+
+/* Toggle active class to transform hamburger icon into 'X' */
+.menu-toggle.active .hamburger-icon {
+    transform: rotate(45deg);
+}
+
+.menu-toggle.active .hamburger-icon::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.menu-toggle.active .hamburger-icon::after {
+    display: none;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Main Section */
+.main-section {
+    text-shadow:1px 1px 10px black;
+    color: #ffffff;
+    text-align: center;
+    padding: 140px 20px;
+    margin-top: 30px;
+    width: 100vw;
+    height: 14vh; /* Adjust height as needed */
+    background-size: cover; /* Cover for desktop */
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: backgroundSlideshow 20s infinite;
+}
+
+@keyframes backgroundSlideshow {
+    0% {
+        background-image: url('https://i.ibb.co.com/d5g0fjb/IMG-20240812-110209.jpg');
+    }
+    33% {
+        background-image: url('https://i.ibb.co.com/R2mNnQR/IMG-20240812-110432.jpg');
+    }
+    66% {
+        background-image: url('https://i.ibb.co.com/18vLPM6/IMG-20240812-133607.jpg');
+    }
+    100% {
+        background-image: url('https://i.ibb.co.com/165zC8C/IMG-20240812-133553.jpg');
+    }
+}
+
+
+.content-section {
+    padding: 60px 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+#download {
+    text-align: right;
+    color: white;
+    background-color: black;
+}
+
+#about {
+    color:black;
+    text-align: center;
+}
+
+/* Button Styling */
+.download-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.download-button:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: grey;
+}
+
+/* Responsive Design for Mobile Navigation */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav a {
+        margin: 10px 20px;
+        width: 100%;
+    }
+
+    .menu-toggle.active + nav {
+        display: flex;
+    }
+}
