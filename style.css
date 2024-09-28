@@ -2,13 +2,14 @@ html {
   scroll-behavior:smooth;
 }
 
+/* Body Styling */
 body {
-    overflow-x:hidden;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* Header Styling */
 header {
     display: flex;
     justify-content: space-between;
@@ -23,7 +24,7 @@ header {
 
 .logo {
     margin-left: 10px;
-    height: 50px; /* Adjust logo size */
+    height: 50px;
 }
 
 .menu-toggle {
@@ -31,12 +32,9 @@ header {
     border: none;
     cursor: pointer;
     margin-right: 20px;
-    position: relative;
-    z-index: 1010;
 }
 
 .hamburger-icon {
-    margin-right:13px;
     width: 30px;
     height: 3px;
     background-color: #333;
@@ -90,14 +88,12 @@ nav a {
 
 /* Main Section */
 .main-section {
-    text-shadow:1px 1px 10px black;
     color: #ffffff;
     text-align: center;
     padding: 140px 20px;
     margin-top: 30px;
-    width: 100vw;
-    height: 14vh; /* Adjust height as needed */
-    background-size: cover; /* Cover for desktop */
+    height: 100vh;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     animation: backgroundSlideshow 20s infinite;
@@ -105,20 +101,42 @@ nav a {
 
 @keyframes backgroundSlideshow {
     0% {
-        background-image: url('https://i.ibb.co.com/d5g0fjb/IMG-20240812-110209.jpg');
+        background-image: url('https://iili.io/dZINibf.md.jpg');
     }
     33% {
-        background-image: url('https://i.ibb.co.com/R2mNnQR/IMG-20240812-110432.jpg');
+        background-image: url('https://iili.io/dZIN4Jn.md.jpg');
     }
     66% {
-        background-image: url('https://i.ibb.co.com/18vLPM6/IMG-20240812-133607.jpg');
+        background-image: url('https://iili.io/dZINPOG.md.jpg');
     }
     100% {
-        background-image: url('https://i.ibb.co.com/165zC8C/IMG-20240812-133553.jpg');
+        background-image: url('https://iili.io/dZIN6Rs.md.jpg');
     }
 }
 
+.main-section h1 {
+    font-size: 3em;  /* Adjust font size for desktop */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
 
+/* Button Styling */
+.download-button {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 1s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);  /* Add shadow */
+}
+
+.download-button:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* Content Sections */
 .content-section {
     padding: 60px 20px;
 }
@@ -134,24 +152,7 @@ p {
 }
 
 #about {
-    color:black;
     text-align: center;
-}
-
-/* Button Styling */
-.download-button {
-    background-color: #ffffff;
-    color: #000000;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: 1s;
-}
-
-.download-button:hover {
-    color: #ffffff;
-    background-color: #000000;
 }
 
 /* Footer */
@@ -162,8 +163,22 @@ footer {
     color: grey;
 }
 
-/* Responsive Design for Mobile Navigation */
+/* Responsive Design for Mobile Devices */
 @media (max-width: 768px) {
+    .main-section {
+        height: auto;
+        padding: 80px 20px;
+        background-size: 100% auto;  /* Ensure full width coverage */
+    }
+
+    .main-section h1 {
+        font-size: 2em; /* Smaller text for mobile */
+    }
+
+    .download-button {
+        font-size: 1em;  /* Adjust button size */
+    }
+
     nav {
         display: none;
         flex-direction: column;
@@ -183,5 +198,11 @@ footer {
 
     .menu-toggle.active + nav {
         display: flex;
+    }
+
+    /* Ensure the image stays within the width of the screen */
+    img {
+        max-width: 100%;
+        height: auto;
     }
 }
